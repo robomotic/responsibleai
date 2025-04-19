@@ -1,0 +1,7 @@
+graph TD
+  A[AI Training Crawler] -->|Checks| B[robots.txt/HTTP Headers]
+  B -->|Parses Permissions| C{Permission Granted?}
+  C -- Yes --> D[Collect Content]
+  C -- No --> E[Skip Content]
+  D --> F[Record Provenance]
+  D --> G[Notify/Compensate Creator]
