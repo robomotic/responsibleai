@@ -37,6 +37,16 @@
     <h1 class="display-4 mb-3">Responsible AI Dataset Initiative</h1>
     <p class="lead mb-4">Building the world’s first ethical, transparent, and legally compliant dataset for open-source AI training.</p>
     <a href="manifesto.html" class="btn btn-primary btn-lg">Read the Manifesto</a>
+    <div class="text-start mt-4">
+      <h2 class="mb-3">Key Points of the Manifesto</h2>
+      <ul>
+        <li><b>Vision:</b> Build the world’s first ethical, transparent, and legally compliant dataset for open-source AI training.</li>
+        <li><b>Core Principles:</b> Copyright respect, fair compensation, transparency, ethical data selection, governance, and open technical standards.</li>
+        <li><b>Legal Alignment:</b> Complies with OECD AI Principles, EU AI Act, UK AI Safety, and international copyright law.</li>
+        <li><b>Enhanced robots.txt Protocol:</b> Proposes a new standard for website owners to control AI training permissions, including content type, commercial use, attribution, compensation, and time limits.</li>
+        <li><b>Implementation Roadmap:</b> Develop tools, pilot with early adopters, scale, and foster a community ecosystem.</li>
+      </ul>
+    </div>
   </div>
 
   <div class="row mt-5">
@@ -70,36 +80,13 @@
   </div>
 
   <div class="row mt-5">
-    <div class="col-12 mb-4">
-      <h2 class="mb-3">Key Points of the Manifesto</h2>
-      <ul>
-        <li><b>Vision:</b> Build the world’s first ethical, transparent, and legally compliant dataset for open-source AI training.</li>
-        <li><b>Core Principles:</b> Copyright respect, fair compensation, transparency, ethical data selection, governance, and open technical standards.</li>
-        <li><b>Legal Alignment:</b> Complies with OECD AI Principles, EU AI Act, UK AI Safety, and international copyright law.</li>
-        <li><b>Enhanced robots.txt Protocol:</b> Proposes a new standard for website owners to control AI training permissions, including content type, commercial use, attribution, compensation, and time limits.</li>
-        <li><b>Implementation Roadmap:</b> Develop tools, pilot with early adopters, scale, and foster a community ecosystem.</li>
-      </ul>
+    <div class="col-md-6 mb-4">
+      <h3>Permission Flow</h3>
+      <img src="permission_flow.png" alt="Permission Flow Diagram" class="img-fluid border rounded shadow-sm" />
     </div>
     <div class="col-md-6 mb-4">
-      <h3>Permission Flow (Mermaid)</h3>
-      <pre class="bg-light p-2"><code class="language-mermaid">graph TD
-  A[AI Training Crawler] -->|Checks| B[robots.txt/HTTP Headers]
-  B -->|Parses Permissions| C{Permission Granted?}
-  C -- Yes --> D[Collect Content]
-  C -- No --> E[Skip Content]
-  D --> F[Record Provenance]
-  D --> G[Notify/Compensate Creator]
-</code></pre>
-    </div>
-    <div class="col-md-6 mb-4">
-      <h3>Ecosystem Relationships (Mermaid)</h3>
-      <pre class="bg-light p-2"><code class="language-mermaid">graph LR
-  WebsiteOwner -- Grants Permissions --> Dataset
-  Dataset -- Used By --> AIResearcher
-  Dataset -- Audited By --> EthicsBoard
-  WebsiteOwner -- Receives Attribution/Compensation --> Dataset
-  AIResearcher -- Submits Feedback --> Dataset
-</code></pre>
+      <h3>Ecosystem Relationships</h3>
+      <img src="ecosystem_relationships.png" alt="Ecosystem Relationships Diagram" class="img-fluid border rounded shadow-sm" />
     </div>
   </div>
 
