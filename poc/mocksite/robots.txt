@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /private/
+
+User-agent: AI-Training-Crawler
+Allow: /blog/
+Disallow: /private/
+
+AI-Training: allowed
+AI-Training-Content-Types: text
+AI-Training-Attribution-Required: true
+AI-Training-Domain-Credit-Format: "Content from mocksite.local"

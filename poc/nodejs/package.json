@@ -1,0 +1,9 @@
+{
+  "name": "poc-nodejs",
+  "version": "1.0.0",
+  "description": "POC Node.js AI-Training permission crawler",
+  "main": "prototype.js",
+  "dependencies": {
+    "axios": "^1.6.0"
+  }
+}

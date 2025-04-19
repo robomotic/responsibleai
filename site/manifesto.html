@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manifesto | Responsible AI Dataset Initiative</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f8fafc; }
+    .content { background: #fff; border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.03); padding: 2rem; margin-top: 2rem; }
+    .footer { margin-top: 4rem; color: #888; }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Responsible AI Dataset Initiative</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="manifesto.html">Manifesto</a></li>
+        <li class="nav-item"><a class="nav-link" href="technical_specification.html">Technical Spec</a></li>
+        <li class="nav-item"><a class="nav-link" href="w3c_proposal.html">W3C Proposal</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container content">
+  <h1 class="mb-4">Responsible AI Dataset Initiative Manifesto</h1>
+  <!-- Manifesto content starts here -->
+  <h2>Vision</h2>
+  <p>To establish the world's first comprehensively ethical, transparent, and legally compliant dataset of internet content (text, audio, and video) specifically designed for training open-source transformer models, ensuring that artificial intelligence development respects creator rights, promotes transparency, and upholds human values.</p>
+  <h2>Problem Statement</h2>
+  <ul>
+    <li>Use copyrighted materials without proper authorization or attribution</li>
+    <li>Lack transparency about data provenance and processing methods</li>
+    <li>Fail to obtain appropriate consent from content creators</li>
+    <li>Ignore cultural, ethical, and legal boundaries across jurisdictions</li>
+    <li>Create legal uncertainties that hamper legitimate innovation</li>
+  </ul>
+  <h2>Core Principles</h2>
+  <h3>1. Copyright Respect and Fair Compensation</h3>
+  <ul>
+    <li><b>Explicit Permission</b>: Only include content with explicit permission from copyright holders</li>
+    <li><b>Fair Compensation</b>: Develop sustainable compensation models for creators</li>
+    <li><b>Opt-in by Default</b>: No content included without affirmative consent</li>
+    <li><b>Licensing Clarity</b>: Clear, transparent licensing terms</li>
+  </ul>
+  <h3>2. Transparency and Documentation</h3>
+  <ul>
+    <li>Full documentation of content origin, permissions, and processing</li>
+    <li>Clear labeling of all dataset components</li>
+    <li>Open documentation of processing techniques</li>
+    <li>Honest assessment and documentation of potential biases</li>
+  </ul>
+  <h3>3. Ethical Data Selection</h3>
+  <ul>
+    <li>Exclude content promoting hate speech, discrimination, or illegal activities</li>
+    <li>Active curation for diverse perspectives and reduced bias</li>
+    <li>Respect for privacy and compliance with regulations</li>
+    <li>Cultural sensitivity</li>
+  </ul>
+  <h3>4. Governance and Oversight</h3>
+  <ul>
+    <li>Independent ethics board</li>
+    <li>Regular audits</li>
+    <li>Stakeholder inclusion</li>
+    <li>Responsiveness to concerns</li>
+  </ul>
+  <h3>5. Technical Implementation</h3>
+  <ul>
+    <li>Open metadata standards</li>
+    <li>Verifiable compliance</li>
+    <li>Flexible subsetting</li>
+    <li>Continuous improvement</li>
+  </ul>
+  <h2>Legal Framework Integration</h2>
+  <h3>OECD AI Principles Alignment</h3>
+  <ul>
+    <li>Respect human rights, democratic values, and diversity</li>
+    <li>Transparent and responsible disclosure</li>
+    <li>Robust, secure, and safe AI lifecycle</li>
+    <li>Accountability and clear attribution</li>
+  </ul>
+  <h3>EU AI Act Compliance</h3>
+  <ul>
+    <li>Adhere to risk-based approach</li>
+    <li>Comprehensive documentation for transparency</li>
+    <li>Data quality governance</li>
+    <li>Support for AI system provider compliance</li>
+  </ul>
+  <h3>UK AI Safety Considerations</h3>
+  <ul>
+    <li>Prioritize methodologies that reduce risks</li>
+    <li>Adopt evaluation frameworks for safety</li>
+    <li>Incorporate safety metrics in dataset design</li>
+  </ul>
+  <h3>Copyright Law Respect</h3>
+  <ul>
+    <li>Respect exclusive rights of authors and creators</li>
+    <li>Proper attribution and licensing</li>
+    <li>Fair remuneration for rightsholders</li>
+    <li>Attention to UK copyright consultation findings</li>
+  </ul>
+  <h2>Enhanced Robots.txt Protocol for AI Training</h2>
+  <p>The traditional robots.txt protocol has been the web's standard for crawler permissions since 1994 but lacks the granularity needed for AI training use cases. We propose an extended standard that enables website owners to explicitly indicate their preferences regarding AI training use of their content.</p>
+  <h3>Current Limitations of robots.txt</h3>
+  <ul>
+    <li>Limited to basic crawl permissions</li>
+    <li>No distinction between crawling for indexing vs. training</li>
+    <li>No mechanisms for compensation or attribution</li>
+    <li>No granular control over content for training</li>
+    <li>No versioning or time-bound permissions</li>
+  </ul>
+  <h3>Proposed AI Training Permissions Extension (ATPE)</h3>
+  <ul>
+    <li>AI-Specific User-Agent Directives</li>
+    <li>Training-Specific Permission Directives</li>
+    <li>Content Type Specifications</li>
+    <li>Compensation and Licensing Terms</li>
+    <li>Time and Version Constraints</li>
+    <li>Metadata Requirements</li>
+  </ul>
+  <h3>Implementation Strategy</h3>
+  <ul>
+    <li>Developer tools and libraries</li>
+    <li>Website owner tools</li>
+    <li>Centralized registry</li>
+    <li>Compliance verification</li>
+    <li>Standardization with W3C</li>
+  </ul>
+  <h3>Education and Adoption Plan</h3>
+  <ul>
+    <li>Comprehensive documentation</li>
+    <li>Plugin ecosystem</li>
+    <li>Public campaign</li>
+    <li>Compliance badging</li>
+    <li>Policy advocacy</li>
+  </ul>
+  <h3>Benefits of the Enhanced Protocol</h3>
+  <ul>
+    <li>Granular control for website owners</li>
+    <li>Clear permissions for AI developers</li>
+    <li>Reduced friction and greater certainty for the ecosystem</li>
+  </ul>
+  <h3>Technical Example: Implementation Flowchart</h3>
+  <ol>
+    <li>AI training crawler encounters a website</li>
+    <li>Checks for enhanced robots.txt directives</li>
+    <li>Records all permissions metadata</li>
+    <li>Honors all restrictions during crawling</li>
+    <li>Maintains complete provenance record</li>
+    <li>Implements compensation/notification if specified</li>
+    <li>Provides verification evidence to website owner</li>
+  </ol>
+  <h2>Implementation Roadmap</h2>
+  <ul>
+    <li>Framework development</li>
+    <li>Pilot collection</li>
+    <li>Scaling</li>
+    <li>Community ecosystem</li>
+  </ul>
+  <h2>Call to Action</h2>
+  <p>We invite content creators, AI researchers, legal experts, ethicists, and policymakers to join us in defining and supporting responsible AI data practices.</p>
+  <h2>Conclusion</h2>
+  <p>The future of AI depends on its foundations. By establishing this pioneering initiative, we aim to demonstrate that technical innovation and ethical responsibility can advance together.</p>
+</div>
+<footer class="footer text-center mt-5">
+  <hr>
+  <p>&copy; 2025 Responsible AI Dataset Initiative. All rights reserved.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

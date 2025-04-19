@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>W3C Proposal | Responsible AI Dataset Initiative</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f8fafc; }
+    .content { background: #fff; border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.03); padding: 2rem; margin-top: 2rem; }
+    .footer { margin-top: 4rem; color: #888; }
+    pre, code { background: #f3f3f3; border-radius: 0.3rem; padding: 0.2rem 0.4rem; }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Responsible AI Dataset Initiative</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="manifesto.html">Manifesto</a></li>
+        <li class="nav-item"><a class="nav-link" href="technical_specification.html">Technical Spec</a></li>
+        <li class="nav-item"><a class="nav-link active" href="w3c_proposal.html">W3C Proposal</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container content">
+  <h1 class="mb-4">W3C Community Group Proposal: AI Training Permissions Extension (ATPE)</h1>
+  <p><em>Date: April 19, 2025<br>Authors: Responsible AI Dataset Initiative<br>Status: Draft Proposal</em></p>
+  <!-- W3C proposal content starts here -->
+  <h2>Abstract</h2>
+  <p>This document proposes a standardized extension to the robots.txt protocol called the AI Training Permissions Extension (ATPE). The extension enables website owners to explicitly declare their preferences regarding the use of their content for artificial intelligence training purposes. The proposal addresses a critical gap in the current web infrastructure, where no standardized mechanism exists for content creators to express consent for AI training use of their work.</p>
+  <h2>1. Introduction</h2>
+  <h3>1.1 Background</h3>
+  <p>Since its informal introduction in 1994, the robots.txt protocol has served as the de facto standard for website owners to communicate with web crawlers about which parts of their sites should or should not be indexed. However, the modern web ecosystem faces new challenges with the rise of large-scale AI models trained on web content.</p>
+  <p>While the original robots.txt protocol addresses indexing and caching of web content, it lacks the expressiveness needed for the nuanced permissions required for AI training data collection. Current AI training datasets often include web content without explicit permission from creators, leading to legal challenges, copyright disputes, and ethical concerns.</p>
+  <h3>1.2 Problem Statement</h3>
+  <ul>
+    <li>Binary Permission Model: Only allows for allowing or disallowing access, without nuance for different types of use.</li>
+    <li>No Content Type Specificity: Cannot distinguish permissions between text, images, audio, or video.</li>
+    <li>No Commercial vs. Non-commercial Distinction: Cannot express different permissions based on intended use.</li>
+    <li>No Attribution or Compensation Requirements: Cannot express conditions for content use.</li>
+    <li>No Temporal Constraints: Cannot specify time limits on permissions.</li>
+  </ul>
+  <h3>1.3 Goals</h3>
+  <ul>
+    <li>Extend robots.txt with a standardized syntax for AI training permissions</li>
+    <li>Provide granular control to website owners over how their content is used</li>
+    <li>Enable clear expression of attribution and compensation requirements</li>
+    <li>Establish a technical foundation for responsible AI data collection</li>
+    <li>Reduce legal uncertainties for both content creators and AI developers</li>
+  </ul>
+  <h2>2. Proposed Standard: AI Training Permissions Extension</h2>
+  <h3>2.1 Overview</h3>
+  <p>The AI Training Permissions Extension (ATPE) builds upon the existing robots.txt protocol to add directives specifically for AI training crawlers and data collection. It uses a similar syntax but introduces new directives with the prefix "AI-Training-".</p>
+  <h3>2.2 Core Directives</h3>
+  <pre><code>AI-Training: [allowed|conditional|disallowed]
+AI-Training-Allow-Text: [true|false]
+AI-Training-Allow-Images: [true|false]
+AI-Training-Allow-Audio: [true|false]
+AI-Training-Allow-Video: [true|false]
+AI-Training-Commercial-Training: [allowed|disallowed]
+AI-Training-NonCommercial-Training: [allowed|disallowed]
+AI-Training-Attribution-Required: [true|false]
+AI-Training-Domain-Credit-Format: "Content from example.com"
+AI-Training-Creator-Name: "Author Name"
+AI-Training-Compensation-Required: [true|false]
+AI-Training-Compensation-Contact: "licensing@example.com"
+AI-Training-Compensation-Link: "https://example.com/ai-licensing"
+AI-Training-Valid-From: YYYY-MM-DD
+AI-Training-Valid-Until: YYYY-MM-DD
+AI-Training-Max-Snapshot-Age: [days]
+AI-Training-Require-Source-Tracking: [true|false]
+AI-Training-Require-Usage-Notification: [true|false]
+AI-Training-Usage-Contact: "aiusage@example.com"
+</code></pre>
+  <h3>2.3 Extended Functionality</h3>
+  <pre><code>AI-Training-Version: [version]
+AI-Training-Policy-ID: [unique identifier]
+AI-Training-Verification-Endpoint: [URL]
+AI-Training-Signature: [cryptographic signature]
+</code></pre>
+  <h2>3. Examples</h2>
+  <pre><code>User-agent: AI-Training-Crawler
+Allow: /blog/
+Disallow: /private/
+
+AI-Training: allowed
+AI-Training-Content-Types: text
+AI-Training-Attribution-Required: true
+AI-Training-Domain-Credit-Format: "Content from example.com"
+</code></pre>
+  <pre><code>User-agent: AI-Training-Crawler
+Allow: /blog/
+Allow: /articles/
+Disallow: /private/
+Disallow: /premium/
+
+AI-Training: conditional
+AI-Training-Content-Types: text,images
+AI-Training-Commercial-Training: disallowed
+AI-Training-NonCommercial-Training: allowed
+AI-Training-Attribution-Required: true
+AI-Training-Domain-Credit-Format: "Content from example.com"
+AI-Training-Creator-Name: "Example Team"
+AI-Training-Valid-From: 2025-01-01
+AI-Training-Valid-Until: 2026-01-01
+AI-Training-Max-Snapshot-Age: 90
+AI-Training-Require-Source-Tracking: true
+AI-Training-Require-Usage-Notification: true
+AI-Training-Usage-Contact: "aiusage@example.com"
+AI-Training-Version: 1.0
+AI-Training-Policy-ID: 5f2c8a9b-3e1d-4ef2-b4c1-7a539a25f0d2
+</code></pre>
+  <h2>4. Implementation Considerations</h2>
+  <ul>
+    <li>Backward compatibility with existing robots.txt</li>
+    <li>Precedence rules for directive interpretation</li>
+    <li>Alternative implementation via HTTP headers, meta tags, JSON-LD</li>
+  </ul>
+  <h2>5. Security and Privacy Considerations</h2>
+  <ul>
+    <li>Integrity protection via cryptographic signatures</li>
+    <li>Validation endpoint for real-time permission checks</li>
+    <li>Privacy implications of permission declarations</li>
+  </ul>
+  <h2>6. Benefits and Ecosystem Impact</h2>
+  <ul>
+    <li>Granular control for website owners</li>
+    <li>Clear permissions for AI developers</li>
+    <li>Reduced friction and greater certainty for the ecosystem</li>
+    <li>Supports responsible AI innovation</li>
+  </ul>
+  <h2>7. Adoption Strategy</h2>
+  <ul>
+    <li>Parser libraries and reference implementations</li>
+    <li>Community group formation and outreach</li>
+    <li>Technical and legal documentation</li>
+  </ul>
+  <h2>8. Conclusion</h2>
+  <p>The AI Training Permissions Extension addresses a critical gap in the current web infrastructure by providing a standardized way for website owners to express their preferences regarding AI training use of their content. By building upon the familiar robots.txt protocol, ATPE offers an accessible, backward-compatible solution that can be widely adopted.</p>
+  <h2>References &amp; Appendix</h2>
+  <p>For full details, see the <a href="../w3c/proposal.md">w3c/proposal.md</a> in the repository.</p>
+</div>
+<footer class="footer text-center mt-5">
+  <hr>
+  <p>&copy; 2025 Responsible AI Dataset Initiative. All rights reserved.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
