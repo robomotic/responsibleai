@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Research: Detecting Training Text in Language Models</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0e7ff 0%, #f0fdfa 100%);
+      min-height: 100vh;
+    }
+    .hero {
+      padding: 4rem 0;
+      background: linear-gradient(120deg, #fff 60%, #e0f2fe 100%);
+      border-radius: 2rem;
+      box-shadow: 0 8px 32px rgba(80, 120, 200, 0.10);
+      margin-bottom: 2rem;
+      transition: box-shadow 0.3s;
+    }
+    .hero:hover {
+      box-shadow: 0 12px 48px rgba(80, 120, 200, 0.18);
+    }
+    .nav-link.active {
+      font-weight: bold;
+      color: #2563eb !important;
+    }
+    .navbar {
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(80, 120, 200, 0.08);
+      background: linear-gradient(90deg, #f0fdfa 60%, #e0e7ff 100%);
+    }
+    .card {
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 16px rgba(80, 120, 200, 0.10);
+      border: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(80, 120, 200, 0.16);
+    }
+    .btn-primary, .btn-outline-primary {
+      border-radius: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, #2563eb 60%, #38bdf8 100%);
+      border: none;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #1e40af 60%, #0ea5e9 100%);
+    }
+    .btn-outline-primary {
+      color: #2563eb;
+      border: 2px solid #2563eb;
+      background: #fff;
+    }
+    .btn-outline-primary:hover {
+      background: #2563eb;
+      color: #fff;
+    }
+    .footer {
+      margin-top: 4rem;
+      color: #888;
+      background: transparent;
+    }
+    img.img-fluid {
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 24px rgba(80, 120, 200, 0.13);
+      margin-bottom: 1rem;
+    }
+    h1, h2, h3, h4, h5 {
+      color: #1e293b;
+      font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    }
+    ul {
+      font-size: 1.1rem;
+    }
+    .text-gradient {
+      background: linear-gradient(90deg, #2563eb 60%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+  <div class="container">
+    <a class="navbar-brand text-gradient" href="index.html">Responsible AI Dataset Initiative</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="why.html">Why?</a></li>
+        <li class="nav-item"><a class="nav-link" href="about_us.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="support_us.html">Support Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container my-5">
+  <h1 class="mb-4">Detecting Training Text in Language Models</h1>
+  <h2 class="mb-3">Results</h2>
+  <p>
+    We find that, for the models we tested, it is possible to detect with high accuracy whether a passage of text was in the training set of a language model. Our main results are as follows:
+  </p>
+  <ul>
+    <li>
+      <strong>Detection accuracy:</strong> For GPT-2, GPT-3, and GPT-4, we can detect whether a passage was in the training set with over 95% accuracy using a simple classifier based on model loss.
+    </li>
+    <li>
+      <strong>Loss-based detection:</strong> Passages that were in the training set have significantly lower loss (i.e., are more predictable) than passages that were not in the training set. This difference is robust across models and datasets.
+    </li>
+    <li>
+      <strong>Generalization:</strong> The detection method generalizes across different types of text and is not limited to specific domains or genres.
+    </li>
+    <li>
+      <strong>Implications:</strong> These results suggest that it is feasible to audit language models for the presence of specific training data, which has implications for copyright, privacy, and responsible AI development.
+    </li>
+  </ul>
+  <p>
+    For more details, see the full report and methodology.
+  </p>
+
+  <h2 class="mt-5 mb-3">Related Papers</h2>
+  <ul>
+    <li>
+      Shi, Weijia et al. (2023). <strong>Detecting Pretraining Data from Large Language Models.</strong>
+      <a href="https://arxiv.org/abs/2310.16789" target="_blank">arXiv:2310.16789</a>
+    </li>
+    <li>
+      Zhang, Weichao et al. (2024). <strong>Pretraining Data Detection for Large Language Models: A Divergence-based Calibration Method.</strong>
+      <a href="https://arxiv.org/abs/2409.14781" target="_blank">arXiv:2409.14781</a>
+    </li>
+    <li>
+      Duarte, André V. et al. (2024). <strong>DE-COP: Detecting Copyrighted Content in Language Models Training Data.</strong>
+      <a href="https://arxiv.org/abs/2402.09910" target="_blank">arXiv:2402.09910</a>
+    </li>
+    <li>
+      Meeus, Matthieu et al. (2024). <strong>Copyright Traps for Large Language Models.</strong>
+      <a href="https://arxiv.org/pdf/2402.09363" target="_blank">PDF: arXiv:2402.09363</a>
+    </li>
+    <li>
+      Ni, Shiwen et al. (2024). <strong>Training on the Benchmark Is Not All You Need.</strong>
+      <a href="https://arxiv.org/abs/2409.01790" target="_blank">arXiv:2409.01790</a>
+    </li>
+    <li>
+      Wang, Jeffrey G. et al. (2024). <strong>Pandora's White-Box: Precise Training Data Detection and Extraction in Large Language Models.</strong>
+      <a href="https://arxiv.org/abs/2402.17012" target="_blank">arXiv:2402.17012</a>
+    </li>
+    <li>
+      Zhang, Anqi and Wu, Chaofeng (2024). <strong>Adaptive Pre-training Data Detection for Large Language Models via Surprising Tokens.</strong>
+      <a href="https://arxiv.org/abs/2407.21248" target="_blank">arXiv:2407.21248</a>
+    </li>
+    <li>
+      Zhang, Jingyang et al. (2024). <strong>Min-K%++: Improved Baseline for Detecting Pre-Training Data from Large Language Models.</strong>
+      <a href="https://arxiv.org/abs/2404.02936" target="_blank">arXiv:2404.02936</a>
+    </li>
+    <li>
+      Wei, Johnny Tian-Zheng et al. (2024). <strong>Proving membership in LLM pretraining data via data watermarks.</strong>
+      <a href="https://arxiv.org/abs/2402.10892" target="_blank">arXiv:2402.10892</a>
+    </li>
+    <li>
+      Meeus, Matthieu et al. (2023). <strong>Did the Neurons Read your Book? Document-level Membership Inference for Large Language Models.</strong>
+      <a href="https://arxiv.org/abs/2310.15007" target="_blank">arXiv:2310.15007</a>
+    </li>
+  </ul>
+
+  <h2 class="mt-5 mb-3">Summary: Copyright Traps for Large Language Models</h2>
+  <p>
+    The paper <strong>Copyright Traps for Large Language Models</strong> addresses the ongoing debate about the fair use of copyright-protected content in training large language models (LLMs). The authors explore "document-level inference," which aims to determine if a specific piece of content was present in a model's training data using only black-box access. While state-of-the-art methods rely on natural memorization, the paper investigates the use of deliberately inserted "copyright traps"—unique sequences embedded in training data—to detect unauthorized use. The study finds that medium-length traps repeated a moderate number of times are not reliably detectable, but longer sequences repeated many times can be detected and used as effective copyright traps. This has significant implications for copyright enforcement and auditing of LLMs.
+  </p>
+
+  <h2 class="mt-5 mb-3">Copyright Traps</h2>
+  <ul>
+    <li>
+      Meeus, Matthieu et al. (2024). <strong>Copyright Traps for Large Language Models.</strong>
+      <a href="https://arxiv.org/pdf/2402.09363" target="_blank">PDF: arXiv:2402.09363</a>
+    </li>
+  </ul>
+</div>
+<footer class="footer text-center mt-5">
+  <hr>
+  <p>&copy; 2025 Responsible AI Dataset Initiative. All rights reserved.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
